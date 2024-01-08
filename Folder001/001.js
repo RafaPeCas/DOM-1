@@ -4,7 +4,10 @@
 //sacar sus hijos Para ello creo una variable que va a almacenar un array con todos los elementos que se encuentran
 //entro del div con le id contenedor y lo muestro
 let childNodesList = contenedor.childNodes;
-console.log(childNodesList);
+//lo recorro con un for of
+for (let node of childNodesList){
+    console.log(node)
+}
 //Estaría mostrando todas las etiquetas más los espacios en blanco que son mostrados como #text
 
 //Para mostrar el primer hijo se utiliza firstChild directamente sobre el elemento a seleccionar, ya que devuelve solo el primer nodo
@@ -23,7 +26,9 @@ console.log(childNodesList[1].parentElement);
 //aplicando la logica anterior busco el elemento ul y utilizo children para crear un array de elemento al igual que el apartado 1
 //Muestro los elementos del array como en el apartado 1
 console.log("Children de ul:");
-console.log(childNodesList[5].children);
+for (let node of childNodesList[5].children){
+    console.log(node);
+}
 
 //A diferencia de firstChild, esto lo que hace es seleccionar la primera etiqueta obviando los espacios blanco #text
 console.log("First element child:");
