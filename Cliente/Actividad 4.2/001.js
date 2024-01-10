@@ -1,18 +1,22 @@
 "use strict"
 
 let cal = document.createElement("table");
-let tr = document.createElement("th");
-let td = document.createElement("td");
+cal.setAttribute("border", 1)
+let tr = document.createElement("tr");
 
-for (let i=0; i<=7; i++){
+
+for (let i=0; i<7; i++){
     let days = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
-    td.set(days[i]);
-    tr.appendChild(td);
+    let th = document.createElement("th");
+    th.textContent=days[i];
+    tr.appendChild(th);
+    console.log(th)
+    console.log(tr)
 }
 
 cal.appendChild(tr);
 
-createCalendar(cal, 2024, 3);
+createCalendar(cal, 2024, 1);
 
 function createCalendar(elem, year, month) {
     month -= 1;
@@ -23,8 +27,20 @@ function createCalendar(elem, year, month) {
     console.log(getWeekDay(fexita));
     for (let i = 1; i <= monthLong; i++) {
         let fexota = new Date(year, month, i)
-        console.log(fexota);
-        document.createElement("")
+        let td = document.createElement("td");
+        if(getWeekDay(fexota)==="SU"){
+            let tr2 = document.createElement("tr");
+            td.textContent=i;
+            tr2.appendChild(td)
+            cal.appendChild(tr2)
+        }
+        
+
+        
+        if(getWeekDay(fexota)==="SA"){
+            
+        }
+        
     }
 
     calendario.appendChild(cal);
