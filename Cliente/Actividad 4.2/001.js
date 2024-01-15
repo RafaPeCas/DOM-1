@@ -1,53 +1,35 @@
 "use strict"
 
-let cal = document.createElement("table");
-cal.setAttribute("border", 1)
-let tr = document.createElement("tr");
+let cal = document.querySelector("table");
 
+createCalendar(cal, 2023, 1)
 
-for (let i=0; i<7; i++){
-    let days = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
-    let th = document.createElement("th");
-    th.textContent=days[i];
-    tr.appendChild(th);
-    console.log(th)
-    console.log(tr)
-}
+function createCalendar(cal, year, month) {
+    let date = new Date(year, month, 0);
+    console.log(date);
+    console.log(date.getDate());
 
-cal.appendChild(tr);
-
-createCalendar(cal, 2024, 1);
-
-function createCalendar(elem, year, month) {
-    month -= 1;
-    let fexita = new Date(year, month);
-    let fexita2 = new Date(year, month + 1);
-    let monthLong = (Math.round((fexita2 - fexita) / 86400000))
-    console.log(monthLong);
-    console.log(getWeekDay(fexita));
-    for (let i = 1; i <= monthLong; i++) {
-        let fexota = new Date(year, month, i)
-        let td = document.createElement("td");
-        if(getWeekDay(fexota)==="SU"){
-            let tr2 = document.createElement("tr");
-            td.textContent=i;
-            tr2.appendChild(td)
-            cal.appendChild(tr2)
-        }
-        
-
-        
-        if(getWeekDay(fexota)==="SA"){
-            
-        }
+    for(let i=0; i<getWeekDay(date); i++){
         
     }
 
-    calendario.appendChild(cal);
+    for (let i=1; i<=date.getDate(); i++){
+        let date2 = new Date(year, month-1,i)
+        if(console.log(date2) == "LU"){
+            cal.insertRow(7);
+        }
+        
+        console.log(getWeekDay(date2))
+        
+    }
+
 }
 
+
+
 function getWeekDay(date) {
-    let days = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
-  
-    return days[date.getDay()];
-  }
+    let weekDay=date.getDay()
+    let days = ['LU', 'MA', 'MI', 'JU', 'VI', 'SA', 'DO'];
+
+    return days[weekDay];
+}
