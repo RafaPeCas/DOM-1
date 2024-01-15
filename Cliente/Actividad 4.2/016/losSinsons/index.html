@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinsons</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script defer src="JS/script.js"></script>
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <!-- Aquí cargo los audios -->
+    <audio src="sounds/telesound.wav" id="telesound"></audio>
+    <audio src="sounds/next.wav" id="nextsound"></audio>
+    <main>
+        <div id="selectores">
+            <!-- Flechas para cambiar de canal -->
+            <img src="img/flexa.png" alt="siguiente-canal" class="selector oculto" id="izquierda" onclick="canales(+1)">
+            <img src="img/flexa.png" alt="canal-anterior" class="selector oculto" id="derecha" onclick="canales(-1)">
+        </div>
+        <!-- Filtro de ruido para la imágen de la tv -->
+        <div id="filtro" class="filtro oculto"></div>
+        <!-- Botón de encendido -->
+        <img class="off" id="onOff" src="img/on.png" alt="encendido/apagado-televisor" onclick="cambiar()">
+        <div id="televisor">
+            <!-- Marco de la tv -->
+            <img src="img/tv.png" alt="marco-televisor" class="tvImg">
+            <!-- Contenido de la tv -->
+            <img src="img/bort.gif" alt="contenido-televisor" class="tvImg2 oculto" id="tv">
+        </div>
+        
+    </main>
+
+    <footer>
+    </footer>
+</body>
+
+</html>

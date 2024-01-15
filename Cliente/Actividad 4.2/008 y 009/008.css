@@ -1,0 +1,41 @@
+body {
+    margin: auto;
+    margin-top: 50px;
+    width: 50vw;
+}
+
+h1{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+p span{
+    font-style: italic;
+    font-weight: bold;
+}
+
+p{
+    margin: 0;
+}
+
+.container {
+    background: rgb(188, 255, 188);
+    padding: 10px 20px 10px;
+    border-top: solid 2px #457300;
+}
+
+.cross {
+    color: red;
+    cursor: pointer;
+}
+
+.align {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.containerMain{
+    margin-bottom: 50px;
+}
